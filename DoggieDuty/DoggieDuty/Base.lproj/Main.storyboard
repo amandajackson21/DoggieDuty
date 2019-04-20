@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,7 +29,8 @@
         <!--LoginViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="LoginViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="DoggieDuty" customModuleProvider="target" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <viewController title="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="DoggieDuty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -84,7 +85,8 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="cHM-5Z-32h" kind="presentation" identifier="signUpSegue" id="DqO-dK-Grh"/>
+                                    <action selector="onSignup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aYB-4X-jaV"/>
+                                    <segue destination="cHM-5Z-32h" kind="presentation" identifier="signupSegue" id="GYS-Gv-y5y"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="veO-vB-MT6">
@@ -98,7 +100,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="zR1-CC-p3P" kind="presentation" identifier="loginSegue" id="pWt-7t-Pvt"/>
+                                    <action selector="onLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5WK-mo-yP4"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b2q-k2-HoR">
@@ -141,8 +143,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="passwordField" destination="b2q-k2-HoR" id="qdr-Hc-6II"/>
+                        <outlet property="usernameField" destination="ThB-VF-gAq" id="07I-gw-WJh"/>
+                        <segue destination="zR1-CC-p3P" kind="presentation" identifier="loginSegue" id="bcU-vm-ldK"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.23188405797103" y="132.58928571428572"/>
         </scene>
@@ -191,7 +197,7 @@
         <!--SignUpViewController-->
         <scene sceneID="JDN-Lu-zYC">
             <objects>
-                <viewController title="SignUpViewController" id="cHM-5Z-32h" sceneMemberID="viewController">
+                <viewController title="SignUpViewController" id="cHM-5Z-32h" customClass="SignupViewController" customModule="DoggieDuty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="22s-Y0-8KP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -272,7 +278,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="zR1-CC-p3P" kind="presentation" identifier="signUpFeedSegue" id="vnh-iy-GQZ"/>
+                                    <action selector="onSignup:" destination="cHM-5Z-32h" eventType="touchUpInside" id="Sf8-yA-w4y"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -303,6 +309,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="l4N-9p-4yg"/>
                     </view>
+                    <connections>
+                        <outlet property="passwordField" destination="Zc0-1J-8CG" id="YBo-dr-lMg"/>
+                        <outlet property="rePasswordField" destination="C7f-Gq-Ej2" id="mld-Ad-tAQ"/>
+                        <outlet property="usernameField" destination="CKz-Au-IKm" id="fCS-Nz-onV"/>
+                        <segue destination="zR1-CC-p3P" kind="presentation" identifier="SignupSuccessSegue" id="UtE-Jw-bQc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g4X-XM-Dyy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -456,9 +468,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="login" width="1000" height="2274"/>
+        <image name="login" width="500" height="1137"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vnh-iy-GQZ"/>
+        <segue reference="UtE-Jw-bQc"/>
     </inferredMetricsTieBreakers>
 </document>
