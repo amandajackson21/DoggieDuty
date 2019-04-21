@@ -15,6 +15,13 @@ This is an app that helps you see who in your household has taken care of your p
 
 <img src='IMG_0645.jpeg'>
 
+## Video Walkthrough
+
+Here's a walkthrough of implemented user stories:
+
+<img src='http://g.recordit.co/WJRNicTQ1M.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/lGyTcS8Ay6.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
 ## Schema
 
 User 
