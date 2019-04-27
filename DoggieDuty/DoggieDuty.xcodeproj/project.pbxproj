@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		22186CC6226BAEE900806B3D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22186CC5226BAEE900806B3D /* LoginViewController.swift */; };
-		22186CCA226BAF2300806B3D /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22186CC9226BAF2300806B3D /* FeedViewController.swift */; };
 		22186CCC226BAF3B00806B3D /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22186CCB226BAF3B00806B3D /* SignupViewController.swift */; };
 		373F044E226953F100B6F32F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373F044D226953F100B6F32F /* AppDelegate.swift */; };
 		373F0453226953F100B6F32F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 373F0451226953F100B6F32F /* Main.storyboard */; };
@@ -16,6 +15,7 @@
 		373F0458226953F200B6F32F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 373F0456226953F200B6F32F /* LaunchScreen.storyboard */; };
 		373F0463226953F200B6F32F /* DoggieDutyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373F0462226953F200B6F32F /* DoggieDutyTests.swift */; };
 		373F046E226953F200B6F32F /* DoggieDutyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373F046D226953F200B6F32F /* DoggieDutyUITests.swift */; };
+		37D25B5B22750AAD006CE5C0 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D25B5A22750AAD006CE5C0 /* FeedTableViewController.swift */; };
 		8A3BAA6BDC91AC94C9B088A2 /* Pods_DoggieDutyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7ECB59FC97F414A39FE032B /* Pods_DoggieDutyTests.framework */; };
 		914386DC07EF17A500B9479D /* Pods_DoggieDutyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3E1CCBE994F0FAC4278458A /* Pods_DoggieDutyUITests.framework */; };
 		B1DAD7DCF8911E22ACF484AF /* Pods_DoggieDuty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA01D9DEDB8C1221AD3BF261 /* Pods_DoggieDuty.framework */; };
@@ -40,7 +40,6 @@
 
 /* Begin PBXFileReference section */
 		22186CC5226BAEE900806B3D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		22186CC9226BAF2300806B3D /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		22186CCB226BAF3B00806B3D /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		24D19EBA8BBF8FA980512360 /* Pods-DoggieDutyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoggieDutyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DoggieDutyTests/Pods-DoggieDutyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2A80585165AF65AA9B045BA7 /* Pods-DoggieDuty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoggieDuty.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DoggieDuty/Pods-DoggieDuty.debug.xcconfig"; sourceTree = "<group>"; };
@@ -57,6 +56,7 @@
 		373F0469226953F200B6F32F /* DoggieDutyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoggieDutyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		373F046D226953F200B6F32F /* DoggieDutyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoggieDutyUITests.swift; sourceTree = "<group>"; };
 		373F046F226953F200B6F32F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37D25B5A22750AAD006CE5C0 /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		8F5A0D12A0D253A362FD3BCE /* Pods-DoggieDutyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoggieDutyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DoggieDutyUITests/Pods-DoggieDutyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		960E95E94D8800A9692637CB /* Pods-DoggieDutyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoggieDutyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DoggieDutyTests/Pods-DoggieDutyTests.release.xcconfig"; sourceTree = "<group>"; };
 		CA01D9DEDB8C1221AD3BF261 /* Pods_DoggieDuty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DoggieDuty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,11 +130,11 @@
 			children = (
 				373F044D226953F100B6F32F /* AppDelegate.swift */,
 				373F0451226953F100B6F32F /* Main.storyboard */,
+				37D25B5A22750AAD006CE5C0 /* FeedTableViewController.swift */,
 				373F0454226953F200B6F32F /* Assets.xcassets */,
 				373F0456226953F200B6F32F /* LaunchScreen.storyboard */,
 				373F0459226953F200B6F32F /* Info.plist */,
 				22186CC5226BAEE900806B3D /* LoginViewController.swift */,
-				22186CC9226BAF2300806B3D /* FeedViewController.swift */,
 				22186CCB226BAF3B00806B3D /* SignupViewController.swift */,
 			);
 			path = DoggieDuty;
@@ -404,7 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22186CC6226BAEE900806B3D /* LoginViewController.swift in Sources */,
-				22186CCA226BAF2300806B3D /* FeedViewController.swift in Sources */,
+				37D25B5B22750AAD006CE5C0 /* FeedTableViewController.swift in Sources */,
 				22186CCC226BAF3B00806B3D /* SignupViewController.swift in Sources */,
 				373F044E226953F100B6F32F /* AppDelegate.swift in Sources */,
 			);
