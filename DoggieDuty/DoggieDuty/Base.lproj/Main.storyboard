@@ -413,9 +413,7 @@
                             <outlet property="delegate" destination="fM8-0F-WDT" id="4K1-Bd-YAL"/>
                         </connections>
                     </tableView>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="VVI-LS-Lyc"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ju-Wg-p6c" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -481,6 +479,6 @@
         <image name="login" width="1000" height="2274"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UtE-Jw-bQc"/>
+        <segue reference="bcU-vm-ldK"/>
     </inferredMetricsTieBreakers>
 </document>
