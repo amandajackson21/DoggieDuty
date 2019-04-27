@@ -16,6 +16,7 @@
 		373F0463226953F200B6F32F /* DoggieDutyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373F0462226953F200B6F32F /* DoggieDutyTests.swift */; };
 		373F046E226953F200B6F32F /* DoggieDutyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373F046D226953F200B6F32F /* DoggieDutyUITests.swift */; };
 		37D25B5B22750AAD006CE5C0 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D25B5A22750AAD006CE5C0 /* FeedTableViewController.swift */; };
+		37D25B6322750F85006CE5C0 /* PostCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D25B6222750F85006CE5C0 /* PostCellTableViewCell.swift */; };
 		8A3BAA6BDC91AC94C9B088A2 /* Pods_DoggieDutyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7ECB59FC97F414A39FE032B /* Pods_DoggieDutyTests.framework */; };
 		914386DC07EF17A500B9479D /* Pods_DoggieDutyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3E1CCBE994F0FAC4278458A /* Pods_DoggieDutyUITests.framework */; };
 		B1DAD7DCF8911E22ACF484AF /* Pods_DoggieDuty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA01D9DEDB8C1221AD3BF261 /* Pods_DoggieDuty.framework */; };
@@ -57,6 +58,7 @@
 		373F046D226953F200B6F32F /* DoggieDutyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoggieDutyUITests.swift; sourceTree = "<group>"; };
 		373F046F226953F200B6F32F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37D25B5A22750AAD006CE5C0 /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
+		37D25B6222750F85006CE5C0 /* PostCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellTableViewCell.swift; sourceTree = "<group>"; };
 		8F5A0D12A0D253A362FD3BCE /* Pods-DoggieDutyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoggieDutyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DoggieDutyUITests/Pods-DoggieDutyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		960E95E94D8800A9692637CB /* Pods-DoggieDutyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoggieDutyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DoggieDutyTests/Pods-DoggieDutyTests.release.xcconfig"; sourceTree = "<group>"; };
 		CA01D9DEDB8C1221AD3BF261 /* Pods_DoggieDuty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DoggieDuty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +130,7 @@
 		373F044C226953F100B6F32F /* DoggieDuty */ = {
 			isa = PBXGroup;
 			children = (
+				37D25B6222750F85006CE5C0 /* PostCellTableViewCell.swift */,
 				373F044D226953F100B6F32F /* AppDelegate.swift */,
 				373F0451226953F100B6F32F /* Main.storyboard */,
 				37D25B5A22750AAD006CE5C0 /* FeedTableViewController.swift */,
@@ -406,6 +409,7 @@
 				22186CC6226BAEE900806B3D /* LoginViewController.swift in Sources */,
 				37D25B5B22750AAD006CE5C0 /* FeedTableViewController.swift in Sources */,
 				22186CCC226BAF3B00806B3D /* SignupViewController.swift in Sources */,
+				37D25B6322750F85006CE5C0 /* PostCellTableViewCell.swift in Sources */,
 				373F044E226953F100B6F32F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

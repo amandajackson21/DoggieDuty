@@ -12,11 +12,7 @@ import AlamofireImage
 
 class FeedTableViewController: UITableViewController {
 
-    @IBOutlet weak var petName: UILabel!
-    @IBOutlet weak var postContent: UILabel!
-    @IBOutlet weak var postedByLabel: UILabel!
-    @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var timeStamp: UILabel!
+    var postArray = [NSDictionary]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +25,15 @@ class FeedTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostCellTableViewCell
+        let user = postArray[indexPath.row]["user"] as! NSDictionary
+        
+        cell.usernameLabel.text = user["name"] as? String
+        
+        return cell
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0
