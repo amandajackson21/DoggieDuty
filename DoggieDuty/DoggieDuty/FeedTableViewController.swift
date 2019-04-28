@@ -19,6 +19,8 @@ class FeedTableViewController: UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        feedTableView.delegate = self
+        feedTableView.dataSource = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -41,7 +43,7 @@ class FeedTableViewController: UITableViewController{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
         let post = posts[indexPath.section]
-        _ = (post["content"] as? [PFObject]) ?? []
+        let postContent = (post["content"] as? [PFObject]) ?? []
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCellTableViewCell") as! PostCellTableViewCell
             
