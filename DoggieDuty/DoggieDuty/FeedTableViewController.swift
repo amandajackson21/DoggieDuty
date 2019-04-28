@@ -10,18 +10,27 @@ import UIKit
 import Parse
 import AlamofireImage
 
-class FeedTableViewController: UITableViewController {
+class FeedTableViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource{
 
-    var postArray = [NSDictionary]()
+    var posts = [PFObject]()
+    var selectedPost: PFObject!
+    let myRefreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        myRefreshControl.addTarget(self, action: #selector(loadPosts), for: .valueChanged)
+        tableView.refreshControl = myRefreshControl
+        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.estimatedRowHeight = 250
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
     }
 
     // MARK: - Table view data source
