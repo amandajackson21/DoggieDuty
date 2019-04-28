@@ -10,48 +10,87 @@ import UIKit
 import Parse
 import AlamofireImage
 
-class FeedTableViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource{
+class FeedTableViewController: UITableViewController{
 
+    @IBOutlet var feedTableView: UITableView!
+    
     var posts = [PFObject]()
     var selectedPost: PFObject!
-    let myRefreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        myRefreshControl.addTarget(self, action: #selector(loadPosts), for: .valueChanged)
-        tableView.refreshControl = myRefreshControl
-        self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.estimatedRowHeight = 250
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        let query = PFQuery(className:"Posts")
+       
+        query.includeKeys(["pet", "content", "content.author", "time"])
+        query.limit = 20
+        query.findObjectsInBackground{ (posts, error) in
+            if posts != nil{
+                self.posts = posts!
+                self.tableView.reloadData()
+            }
+        }
+        
     }
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostCellTableViewCell
-        let user = postArray[indexPath.row]["user"] as! NSDictionary
+        if indexPath.row == 0 {
+        let post = posts[indexPath.section]
+        _ = (post["content"] as? [PFObject]) ?? []
         
-        cell.usernameLabel.text = user["name"] as? String
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCellTableViewCell") as! PostCellTableViewCell
+            
+        let user = post["author"] as! PFUser
+            
+        cell.usernameLabel.text = user.username
+        cell.postContentLabel.text = post["content"] as? String
+            
+        let imageFile = post["image"] as! PFFileObject
+        let urlString = imageFile.url!
+        let url = URL(string: urlString)!
+            
+        cell.photoView.af_setImage(withURL: url)
+            
         return cell
+        }else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PostCellTableViewCell") as! PostCellTableViewCell
+            
+            return cell
     }
+    }
+
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    override func numberOfSections(in tableView: UITableView) -> Int{
+        return posts.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        let post = posts[section]
+        let postContent = (post["content"] as? [PFObject]) ?? []
+        
+        return postContent.count
     }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let post = posts[indexPath.section]
+    
+}
+    @IBAction func onLogoutButton(_ sender: Any) {
+        PFUser.logOut()
+            
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let LoginViewController = main.instantiateViewController(withIdentifier: "LoginViewController")
+            
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        delegate.window?.rootViewController = LoginViewController
+        
+    }
+    
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
