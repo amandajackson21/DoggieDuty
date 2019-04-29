@@ -21,8 +21,8 @@ This is an app that helps you see who in your household has taken care of your p
 Here's a walkthrough of implemented user stories:
 
 <img src='http://g.recordit.co/WJRNicTQ1M.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-<img src='https://gfycat.com/DisfiguredHotHare.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-<img src='https://gfycat.com/DefiantFixedArmednylonshrimp.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://gfycat.com/DisfiguredHotHare' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://gfycat.com/DefiantFixedArmednylonshrimp' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ## Schema
 
