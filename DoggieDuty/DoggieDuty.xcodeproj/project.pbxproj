@@ -11,6 +11,7 @@
 		22186CCC226BAF3B00806B3D /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22186CCB226BAF3B00806B3D /* SignupViewController.swift */; };
 		2235D18C2276B1FC005E0FE0 /* PetsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2235D18B2276B1FC005E0FE0 /* PetsTableViewController.swift */; };
 		2235D18E2276B27F005E0FE0 /* PetsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2235D18D2276B27F005E0FE0 /* PetsTableViewCell.swift */; };
+		3724EB7E2277B54900EA72BF /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3724EB7D2277B54900EA72BF /* NewPostViewController.swift */; };
 		373F044E226953F100B6F32F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373F044D226953F100B6F32F /* AppDelegate.swift */; };
 		373F0453226953F100B6F32F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 373F0451226953F100B6F32F /* Main.storyboard */; };
 		373F0455226953F200B6F32F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 373F0454226953F200B6F32F /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 		24D19EBA8BBF8FA980512360 /* Pods-DoggieDutyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoggieDutyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DoggieDutyTests/Pods-DoggieDutyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2A80585165AF65AA9B045BA7 /* Pods-DoggieDuty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoggieDuty.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DoggieDuty/Pods-DoggieDuty.debug.xcconfig"; sourceTree = "<group>"; };
 		3167B7307ECD4087F092C4BB /* Pods-DoggieDutyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoggieDutyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DoggieDutyUITests/Pods-DoggieDutyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3724EB7D2277B54900EA72BF /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		373F044A226953F100B6F32F /* DoggieDuty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoggieDuty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		373F044D226953F100B6F32F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		373F0452226953F100B6F32F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				37D25B6222750F85006CE5C0 /* PostCellTableViewCell.swift */,
 				373F044D226953F100B6F32F /* AppDelegate.swift */,
 				373F0451226953F100B6F32F /* Main.storyboard */,
+				3724EB7D2277B54900EA72BF /* NewPostViewController.swift */,
 				37D25B5A22750AAD006CE5C0 /* FeedTableViewController.swift */,
 				373F0454226953F200B6F32F /* Assets.xcassets */,
 				373F0456226953F200B6F32F /* LaunchScreen.storyboard */,
@@ -417,6 +420,7 @@
 				22186CCC226BAF3B00806B3D /* SignupViewController.swift in Sources */,
 				2235D18E2276B27F005E0FE0 /* PetsTableViewCell.swift in Sources */,
 				37D25B6322750F85006CE5C0 /* PostCellTableViewCell.swift in Sources */,
+				3724EB7E2277B54900EA72BF /* NewPostViewController.swift in Sources */,
 				373F044E226953F100B6F32F /* AppDelegate.swift in Sources */,
 				2235D18C2276B1FC005E0FE0 /* PetsTableViewController.swift in Sources */,
 			);

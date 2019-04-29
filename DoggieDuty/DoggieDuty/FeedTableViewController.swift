@@ -41,41 +41,43 @@ class FeedTableViewController: UITableViewController{
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
-        let post = posts[indexPath.section]
-        let postContent = (post["content"] as? [PFObject]) ?? []
-        
+//        if indexPath.row == 0 {
+//        let post = posts[indexPath.section]
+//        let postContent = (post["content"] as? [PFObject]) ?? []
+//
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCellTableViewCell") as! PostCellTableViewCell
-            
-        let user = post["author"] as! PFUser
-            
-        cell.usernameLabel.text = user.username
-        cell.postContentLabel.text = post["content"] as? String
-            
-        let imageFile = post["image"] as! PFFileObject
-        let urlString = imageFile.url!
-        let url = URL(string: urlString)!
-            
-        cell.photoView.af_setImage(withURL: url)
-            
-        return cell
-        }else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "PostCellTableViewCell") as! PostCellTableViewCell
-            
+//
+//        let user = post["author"] as! PFUser
+//
+        cell.usernameLabel.text = LoginViewController().getUsername()
+//        cell.postContentLabel.text = post["content"] as? String
+//
+//        let imageFile = post["image"] as! PFFileObject
+//        let urlString = imageFile.url!
+//        let url = URL(string: urlString)!
+//
+//        cell.photoView.af_setImage(withURL: url)
+//
+//        return cell
+//        }else {
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "PostCellTableViewCell") as! PostCellTableViewCell
+        
             return cell
     }
-    }
+    // }
 
     
     override func numberOfSections(in tableView: UITableView) -> Int{
-        return posts.count
+        return 1
+        
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let post = posts[section]
-        let postContent = (post["content"] as? [PFObject]) ?? []
-        
-        return postContent.count
+//        let post = posts[section]
+//        let postContent = (post["content"] as? [PFObject]) ?? []
+//
+//        return postContent.count
+        return 5
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

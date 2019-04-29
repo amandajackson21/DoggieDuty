@@ -24,6 +24,7 @@ class LoginViewController: UIViewController {
         let username = usernameField.text!
         let password = passwordField.text!
         
+        
         PFUser.logInWithUsername(inBackground: username, password: password) { (user
             , error) in
             if user != nil{
@@ -36,6 +37,10 @@ class LoginViewController: UIViewController {
     
     @IBAction func onSignup(_ sender: Any) {
         performSegue(withIdentifier: "signupSegue", sender: nil)
+    }
+    
+    func getUsername() -> String {
+        return NSUserName()
     }
     
     /*
