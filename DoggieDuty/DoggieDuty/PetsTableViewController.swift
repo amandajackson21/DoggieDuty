@@ -21,7 +21,7 @@ class PetsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "petCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PetTableViewCell", for: indexPath)
         return cell
     }
 
