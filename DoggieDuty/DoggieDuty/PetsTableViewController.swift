@@ -37,6 +37,9 @@ class PetsTableViewController: UITableViewController {
         return 5
     }
 
+    @IBAction func onBackButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
