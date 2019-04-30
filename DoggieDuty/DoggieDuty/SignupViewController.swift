@@ -42,11 +42,7 @@ class SignupViewController: UIViewController {
     }
     
     @IBAction func onCancelButton(_ sender: Any) {
-        let main = UIStoryboard(name: "Main", bundle: nil)
-        let LoginViewController = main.instantiateViewController(withIdentifier: "LoginViewController")
-        
-        let delegate = UIApplication.shared.delegate as! AppDelegate
-        delegate.window?.rootViewController = LoginViewController
+        self.dismiss(animated: true, completion: nil)
     }
     
     /*

@@ -407,15 +407,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login" translatesAutoresizingMaskIntoConstraints="NO" id="SjP-ak-Z2W">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5V-CY-Hp5">
-                                <rect key="frame" x="296" y="203" width="46" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Post">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFj-4H-Zmb">
-                                <rect key="frame" x="87" y="203" width="73" height="41"/>
+                                <rect key="frame" x="81" y="322" width="73" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -424,32 +417,47 @@
                                     <action selector="onCancelButton:" destination="LAf-A8-a0d" eventType="touchUpInside" id="gCI-A4-lq1"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a new post..." textAlignment="natural" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="DJA-l2-CaP">
-                                <rect key="frame" x="56" y="89" width="303" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder=" Add a new post..." textAlignment="natural" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="DJA-l2-CaP">
+                                <rect key="frame" x="56" y="95" width="303" height="185"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="303" id="3DS-fx-WMp"/>
+                                    <constraint firstAttribute="height" constant="185" id="mvk-ri-dCj"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5V-CY-Hp5">
+                                <rect key="frame" x="295" y="322" width="46" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Post">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onPostButton:" destination="LAf-A8-a0d" eventType="touchUpInside" id="ia1-jX-IfE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="DJA-l2-CaP" firstAttribute="leading" secondItem="SjP-ak-Z2W" secondAttribute="trailing" constant="-358" id="806-Sb-kIf"/>
+                            <constraint firstItem="SjP-ak-Z2W" firstAttribute="leading" secondItem="FFj-4H-Zmb" secondAttribute="trailing" constant="-154" id="42U-3t-ZQy"/>
                             <constraint firstItem="SjP-ak-Z2W" firstAttribute="top" secondItem="RUh-hH-f39" secondAttribute="top" id="AEq-NM-CaQ"/>
-                            <constraint firstItem="SjP-ak-Z2W" firstAttribute="top" secondItem="DJA-l2-CaP" secondAttribute="bottom" constant="-119" id="FBk-ql-LyK"/>
-                            <constraint firstItem="SjP-ak-Z2W" firstAttribute="leading" secondItem="FFj-4H-Zmb" secondAttribute="trailing" constant="-160" id="IaP-D9-RXg"/>
-                            <constraint firstItem="a5V-CY-Hp5" firstAttribute="leading" secondItem="SjP-ak-Z2W" secondAttribute="trailing" constant="-118" id="VVK-kT-2x7"/>
+                            <constraint firstItem="SjP-ak-Z2W" firstAttribute="top" secondItem="DJA-l2-CaP" secondAttribute="bottom" constant="-280" id="Bsu-Sm-ZiL"/>
+                            <constraint firstItem="DJA-l2-CaP" firstAttribute="leading" secondItem="SjP-ak-Z2W" secondAttribute="trailing" constant="-358" id="Orb-mU-r1M"/>
+                            <constraint firstItem="a5V-CY-Hp5" firstAttribute="leading" secondItem="SjP-ak-Z2W" secondAttribute="trailing" constant="-119" id="ZEQ-LJ-czh"/>
                             <constraint firstItem="SjP-ak-Z2W" firstAttribute="leading" secondItem="JA1-kG-19R" secondAttribute="leading" id="cf9-cj-f3a"/>
-                            <constraint firstItem="FFj-4H-Zmb" firstAttribute="top" secondItem="DJA-l2-CaP" secondAttribute="bottom" constant="84" id="fXJ-RZ-xG4"/>
                             <constraint firstItem="SjP-ak-Z2W" firstAttribute="trailing" secondItem="JA1-kG-19R" secondAttribute="trailing" id="fpb-yw-TTY"/>
-                            <constraint firstItem="a5V-CY-Hp5" firstAttribute="leading" secondItem="FFj-4H-Zmb" secondAttribute="trailing" constant="136" id="q2B-nW-DWc"/>
+                            <constraint firstItem="a5V-CY-Hp5" firstAttribute="leading" secondItem="FFj-4H-Zmb" secondAttribute="trailing" constant="141" id="oGR-zr-vV4"/>
+                            <constraint firstItem="a5V-CY-Hp5" firstAttribute="top" secondItem="DJA-l2-CaP" secondAttribute="bottom" constant="42" id="ojG-E3-ssc"/>
+                            <constraint firstItem="FFj-4H-Zmb" firstAttribute="top" secondItem="DJA-l2-CaP" secondAttribute="bottom" constant="42" id="uFP-nJ-z4h"/>
                             <constraint firstAttribute="bottom" secondItem="SjP-ak-Z2W" secondAttribute="bottom" id="xAq-d4-diZ"/>
-                            <constraint firstItem="a5V-CY-Hp5" firstAttribute="top" secondItem="DJA-l2-CaP" secondAttribute="bottom" constant="84" id="zME-Vq-MZc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JA1-kG-19R"/>
                     </view>
+                    <connections>
+                        <outlet property="postTextField" destination="DJA-l2-CaP" id="ovJ-SQ-dnA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HeS-vV-UWQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

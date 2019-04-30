@@ -39,8 +39,8 @@ class LoginViewController: UIViewController {
         performSegue(withIdentifier: "signupSegue", sender: nil)
     }
     
-    func getUsername() -> String {
-        return NSUserName()
+    func getUsername() -> Any {
+        return PFUser.current()!
     }
     
     /*

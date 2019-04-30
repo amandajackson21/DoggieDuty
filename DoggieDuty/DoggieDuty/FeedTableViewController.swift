@@ -14,6 +14,8 @@ class FeedTableViewController: UITableViewController{
 
     @IBOutlet var feedTableView: UITableView!
     
+    var postText = String()
+    
     var posts = [PFObject]()
     var selectedPost: PFObject!
     
@@ -41,15 +43,16 @@ class FeedTableViewController: UITableViewController{
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        if indexPath.row == 0 {
-//        let post = posts[indexPath.section]
-//        let postContent = (post["content"] as? [PFObject]) ?? []
-//
+        
+        let post = posts[indexPath.section]
+        let user = PFUser.current()!
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCellTableViewCell") as! PostCellTableViewCell
-//
-//        let user = post["author"] as! PFUser
-//
-        cell.usernameLabel.text = LoginViewController().getUsername()
+
+        cell.usernameLabel.text = user.username
+//        cell.petNameLabel.text = user.petName
+        
+        cell.postContentLabel.text = "text"//postText
+
 //        cell.postContentLabel.text = post["content"] as? String
 //
 //        let imageFile = post["image"] as! PFFileObject
@@ -61,14 +64,13 @@ class FeedTableViewController: UITableViewController{
 //        return cell
 //        }else {
 //            let cell = tableView.dequeueReusableCell(withIdentifier: "PostCellTableViewCell") as! PostCellTableViewCell
-        
-            return cell
+        return cell
     }
     // }
 
     
     override func numberOfSections(in tableView: UITableView) -> Int{
-        return 1
+        return posts.count
         
     }
 
@@ -77,7 +79,7 @@ class FeedTableViewController: UITableViewController{
 //        let postContent = (post["content"] as? [PFObject]) ?? []
 //
 //        return postContent.count
-        return 5
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
