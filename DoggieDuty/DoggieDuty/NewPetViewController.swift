@@ -31,7 +31,7 @@ class NewPetViewController: UIViewController, UIImagePickerControllerDelegate, U
         let imageData = imageView.image!.pngData()
         let file = PFFileObject(data: imageData!)
         
-        pet["picture"] = file
+        pet["image"] = file
         
         
         pet.saveInBackground { (success, error) in
