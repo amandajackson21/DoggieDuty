@@ -45,13 +45,13 @@ class FeedTableViewController: UITableViewController{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let post = posts[indexPath.section]
-        let user = post["author"]
+        let user = post["author"] as! PFUser
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCellTableViewCell") as! PostCellTableViewCell
 
-        cell.usernameLabel.text = "banana"
+        cell.usernameLabel.text = user.username
 //        cell.petNameLabel.text = user.petName
         
-        cell.postContentLabel.text = "text"//postText
+        cell.postContentLabel.text = post["content"] as? String
 
 //        cell.postContentLabel.text = post["content"] as? String
 //
