@@ -44,14 +44,12 @@ class FeedTableViewController: UITableViewController{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCellTableViewCell") as! PostCellTableViewCell
         let post = posts[indexPath.row]
-        //let user = post["author"] as! PFUser
+        let user = post["author"] as! PFUser
     
-        cell.usernameLabel.text = "amanda"
+        cell.usernameLabel.text = user.username
 //        cell.petNameLabel.text = user.petName
         
         cell.postContentLabel.text = post["content"] as? String
-//
-//
         return cell
     }
 
