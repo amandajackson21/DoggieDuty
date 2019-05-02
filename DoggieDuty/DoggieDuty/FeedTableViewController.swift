@@ -52,8 +52,6 @@ class FeedTableViewController: UITableViewController{
 //        cell.petNameLabel.text = user.petName
         
         cell.postContentLabel.text = post["content"] as? String
-
-//        cell.postContentLabel.text = post["content"] as? String
 //
 //        let imageFile = post["image"] as! PFFileObject
 //        let urlString = imageFile.url!

@@ -41,11 +41,11 @@ class NewPostViewController: UIViewController {
         }
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var destViewController : FeedTableViewController = segue.destination as! FeedTableViewController
-        
-        destViewController.postText = postTextField.text ?? "test"
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        var destViewController : FeedTableViewController = segue.destination as! FeedTableViewController
+//
+//        destViewController.postText = postTextField.text ?? "test"
+//    }
     
     
 

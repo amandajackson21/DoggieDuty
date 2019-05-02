@@ -7,11 +7,19 @@
 //
 
 import UIKit
+import Parse
+import AlamofireImage
 
 class PetsTableViewController: UITableViewController {
 
+    @IBOutlet var petTableView: UITableView!
+    var pets = [PFObject]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        petTableView.delegate = self
+        petTableView.dataSource = self
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -20,8 +28,28 @@ class PetsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let query = PFQuery(className: "Pets")
+        query.limit = 20
+        query.findObjectsInBackground { (pets, error) in
+            if pets != nil{
+                self.pets = pets!
+                self.petTableView.reloadData()
+            }
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PetTableViewCell", for: indexPath)
+        let cell = petTableView.dequeueReusableCell(withIdentifier: "PetTableViewCell", for: indexPath) as! PetsTableViewCell
+        let pet = pets[indexPath.row]
+        cell.petNameLabel.text = pet["name"] as? String
+        
+        let imageFile = pet["image"] as! PFFileObject
+        let URLstring = imageFile.url!
+        let url = URL(string: URLstring)!
+        cell.photoView.af_setImage(withURL: url)
+        
         return cell
     }
 
@@ -34,7 +62,7 @@ class PetsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return pets.count
     }
 
     @IBAction func onBackButton(_ sender: Any) {

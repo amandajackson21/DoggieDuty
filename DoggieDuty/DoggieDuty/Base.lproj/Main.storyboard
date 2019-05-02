@@ -512,6 +512,10 @@
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="petNameLabel" destination="FVc-8c-Onc" id="kNO-eH-e49"/>
+                                    <outlet property="photoView" destination="S0L-f9-38w" id="Qxc-KE-RJR"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -521,6 +525,9 @@
                     </tableView>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="petTableView" destination="swZ-Rc-dh9" id="46b-Ed-rr7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ju-Wg-p6c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
