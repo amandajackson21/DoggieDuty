@@ -10,7 +10,7 @@ This is an app that helps you see who in your household has taken care of your p
 - [x] User can stay logged in across restarts 
 - [ ] User can view feed of recent pet activity
 - [ ] User can post new update to pet activity
-- [ ] User can enter pet name and picture for multiple animals 
+- [x] User can enter pet name and picture for multiple animals 
 
 ## WireFrame
 
