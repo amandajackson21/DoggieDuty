@@ -14,8 +14,6 @@ class FeedTableViewController: UITableViewController{
 
     @IBOutlet var feedTableView: UITableView!
     
-    var postText = String()
-    
     var posts = [PFObject]()
     var selectedPost: PFObject!
     
@@ -30,7 +28,7 @@ class FeedTableViewController: UITableViewController{
         
         let query = PFQuery(className:"Posts")
        
-        query.includeKeys(["pet", "content", "content.author", "time"])
+        query.includeKeys(["pet", "content", "author", "time"])
         query.limit = 20
         query.findObjectsInBackground{ (posts, error) in
             if posts != nil{
@@ -44,27 +42,18 @@ class FeedTableViewController: UITableViewController{
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let post = posts[indexPath.section]
-        let user = post["author"] as! PFUser
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCellTableViewCell") as! PostCellTableViewCell
-
-        cell.usernameLabel.text = user.username
+        let post = posts[indexPath.row]
+        //let user = post["author"] as! PFUser
+    
+        cell.usernameLabel.text = "amanda"
 //        cell.petNameLabel.text = user.petName
         
         cell.postContentLabel.text = post["content"] as? String
 //
-//        let imageFile = post["image"] as! PFFileObject
-//        let urlString = imageFile.url!
-//        let url = URL(string: urlString)!
 //
-//        cell.photoView.af_setImage(withURL: url)
-//
-//        return cell
-//        }else {
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "PostCellTableViewCell") as! PostCellTableViewCell
         return cell
     }
-    // }
 
     
     override func numberOfSections(in tableView: UITableView) -> Int{
