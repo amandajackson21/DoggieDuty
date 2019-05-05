@@ -42,7 +42,7 @@ class FeedTableViewController: UITableViewController{
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCellTableViewCell") as! PostCellTableViewCell
+        let cell = feedTableView.dequeueReusableCell(withIdentifier: "PostCellTableViewCell") as! PostCellTableViewCell
         let post = posts[indexPath.row]
         let user = post["author"] as! PFUser
     
@@ -55,7 +55,7 @@ class FeedTableViewController: UITableViewController{
 
     
     override func numberOfSections(in tableView: UITableView) -> Int{
-        return posts.count
+        return 1
         
     }
 
@@ -64,7 +64,7 @@ class FeedTableViewController: UITableViewController{
 //        let postContent = (post["content"] as? [PFObject]) ?? []
 //
 //        return postContent.count
-        return 1
+        return posts.count
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
