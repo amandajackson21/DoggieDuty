@@ -30,7 +30,7 @@ class NewPostViewController: UIViewController {
         let post = PFObject(className: "Posts")
         post["content"] = postTextField.text
         post["author"] = PFUser.current()!
-        PFUser.current()?.setObject(post["username"], forKey: "username")
+        //PFUser.current()?.setObject(post["username"], forKey: "username")
             
         post.saveInBackground { (success, error) in
             if success{
