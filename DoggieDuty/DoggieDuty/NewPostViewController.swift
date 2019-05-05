@@ -9,16 +9,44 @@
 import UIKit
 import Parse
 
-class NewPostViewController: UIViewController {
+class NewPostViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
     
     @IBOutlet weak var postTextField: UITextField!
+    @IBOutlet weak var pickerView: UIPickerView!
+    var pets = [PFObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        pickerView.delegate = self
+        pickerView.dataSource = self
         postTextField.borderStyle = UITextField.BorderStyle.roundedRect
 
         // Do any additional setup after loading the view.
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let query = PFQuery(className: "Pets")
+        query.limit = 20
+        query.findObjectsInBackground { (pets, error) in
+            if pets != nil{
+                self.pets = pets!
+            }
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pets.count
+    }
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let pet = pets[row]
+        return pet["name"] as? String
+    }
+    
     
     @IBAction func onCancelButton(_ sender: Any) {
         
