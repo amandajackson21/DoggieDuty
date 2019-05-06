@@ -59,18 +59,19 @@ class NewPostViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     }
     
     @IBAction func onPostButton(_ sender: Any) {
-        var selectedValue = petNameList[pickerView.selectedRow(inComponent: 0)]
+        let selectedValue = petNameList[pickerView.selectedRow(inComponent: 0)]
         let post = PFObject(className: "Posts")
         post["content"] = postTextField.text
         post["author"] = PFUser.current()!
         post["petName"] = selectedValue
-        var pic = PFFileObject(data: nil)
+        var pickedPet = PFObject(className: "Pets")
         for x in pets{
             if x["name"] as! String == selectedValue{
-                pic = x["image"] as! PFFileObject
+               pickedPet = x
             }
         }
-        post["image"] = pic
+
+        post["image"] = pickedPet["image"]
             
         post.saveInBackground { (success, error) in
             if success{
