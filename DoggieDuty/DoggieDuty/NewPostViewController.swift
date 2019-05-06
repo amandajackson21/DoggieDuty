@@ -15,7 +15,7 @@ class NewPostViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBOutlet weak var postTextField: UITextField!
     @IBOutlet weak var pickerView: UIPickerView!
     var pets = [PFObject]()
-    
+    let pet = ["A", "b", "c"]
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView.delegate = self
@@ -36,15 +36,17 @@ class NewPostViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pets.count
+        return pet.count
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
+
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        let pet = pets[row]
-        return pet["name"] as? String
+        //let pet = pets[row]
+        
+        return pet[row]//["name"] as? String
     }
     
     
