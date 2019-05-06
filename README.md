@@ -6,12 +6,12 @@ This is an app that helps you see who in your household has taken care of your p
 
 - [x] User can see login and sign up screen
 - [x] Parse backend set up
-- [x] User can see all view controllers, but not yet functional
+- [x] User can see all view controllers
 - [x] User can stay logged in across restarts 
 - [x] User can view feed of recent pet activity
 - [x] User can post new update to pet activity
 - [x] User can enter pet name and picture for multiple animals 
-- [ ] User can view which pet the activity posted is for 
+- [x] User can view which pet the activity posted is for 
 
 ## WireFrame
 
@@ -21,10 +21,11 @@ This is an app that helps you see who in your household has taken care of your p
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://g.recordit.co/WJRNicTQ1M.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/JiBxQwgIEX.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 <img src='https://thumbs.gfycat.com/DisfiguredHotHare.webp' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 <img src='https://thumbs.gfycat.com/DefiantFixedArmednylonshrimp.webp' title='Video Walkthrough' width='' alt='Video Walkthrough' /> 
 <img src= 'https://thumbs.gfycat.com/ConsiderateImportantChital.webp' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
 
 
 
