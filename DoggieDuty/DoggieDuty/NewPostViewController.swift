@@ -15,7 +15,7 @@ class NewPostViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBOutlet weak var postTextField: UITextField!
     @IBOutlet weak var pickerView: UIPickerView!
     var pets = [PFObject]()
-    let pet = ["A", "b", "c"]
+    var petNameList = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView.delegate = self
@@ -24,29 +24,39 @@ class NewPostViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
 
         // Do any additional setup after loading the view.
     }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         let query = PFQuery(className: "Pets")
         query.limit = 20
         query.findObjectsInBackground { (pets, error) in
             if pets != nil{
+                
                 self.pets = pets!
             }
         }
+        
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print(pets)
+        for x in pets{
+            petNameList.append(x["name"] as! String)
+        }
+        print(petNameList)
+
+        
+    }
+    let test = ["Cat", "banana", "Buddy", "Chuck Bass", "bunny"]// the test works but when I do it with petNameList it doesn't :(
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pet.count
+        return test.count//petNameList.count
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        //let pet = pets[row]
         
-        return pet[row]//["name"] as? String
+        return test[row]//petNameList[row]
     }
     
     
