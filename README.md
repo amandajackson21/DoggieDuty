@@ -23,8 +23,8 @@ Here's a walkthrough of implemented user stories:
 
 <img src='http://g.recordit.co/WJRNicTQ1M.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 <img src='https://thumbs.gfycat.com/DisfiguredHotHare.webp' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-<img src='https://thumbs.gfycat.com/DefiantFixedArmednylonshrimp.webp' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-<img src= 'https://gfycat.com/ConsiderateImportantChital' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://thumbs.gfycat.com/DefiantFixedArmednylonshrimp.webp' title='Video Walkthrough' width='' alt='Video Walkthrough' /> 
+<img src= 'https://giant.gfycat.com/ConsiderateImportantChital.webm' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
 
