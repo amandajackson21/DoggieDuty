@@ -15,6 +15,7 @@ class FeedTableViewController: UITableViewController{
     @IBOutlet var feedTableView: UITableView!
     
     var posts = [PFObject]()
+    //var pets = [PFObject]()
     var selectedPost: PFObject!
     
     override func viewDidLoad() {
@@ -28,7 +29,7 @@ class FeedTableViewController: UITableViewController{
         
         let query = PFQuery(className:"Posts")
        
-        query.includeKeys(["pet", "content", "author", "time"])
+        query.includeKeys(["petName", "content", "author"])
         query.limit = 20
         query.findObjectsInBackground{ (posts, error) in
             if posts != nil{
@@ -36,6 +37,16 @@ class FeedTableViewController: UITableViewController{
                 self.tableView.reloadData()
             }
         }
+        
+        /*let query2 = PFQuery(className:"Pets")
+        
+        query2.limit = 20
+        query2.findObjectsInBackground{ (pets, error) in
+            if pets != nil{
+                self.pets = pets!
+                self.tableView.reloadData()
+            }
+        }*/
         
     }
 
@@ -47,7 +58,13 @@ class FeedTableViewController: UITableViewController{
         let user = post["author"] as! PFUser
     
         cell.usernameLabel.text = user.username
-//        cell.petNameLabel.text = user.petName
+        print(post["petName"])
+        cell.petNameLabel.text = post["petName"] as? String
+        
+        let imageFile = post["image"] as! PFFileObject
+        let URLstring = imageFile.url!
+        let url = URL(string: URLstring)!
+        cell.photoView.af_setImage(withURL: url)
         
         cell.postContentLabel.text = post["content"] as? String
         return cell
@@ -60,17 +77,13 @@ class FeedTableViewController: UITableViewController{
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        let post = posts[section]
-//        let postContent = (post["content"] as? [PFObject]) ?? []
-//
-//        return postContent.count
         return posts.count
     }
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    /*override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let post = posts[indexPath.section]
     
-}
+}*/
     @IBAction func onLogoutButton(_ sender: Any) {
         PFUser.logOut()
             

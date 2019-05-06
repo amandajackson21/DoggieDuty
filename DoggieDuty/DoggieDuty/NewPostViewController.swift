@@ -30,25 +30,18 @@ class NewPostViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         query.limit = 20
         query.findObjectsInBackground { (pets, error) in
             if pets != nil{
-                
                 self.pets = pets!
+                for x in self.pets {
+                    self.petNameList.append(x["name"] as! String)
+                    self.pickerView.reloadAllComponents()
+                }
             }
         }
-        
     }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        print(pets)
-        for x in pets{
-            petNameList.append(x["name"] as! String)
-        }
-        print(petNameList)
 
-        
-    }
-    let test = ["Cat", "banana", "Buddy", "Chuck Bass", "bunny"]// the test works but when I do it with petNameList it doesn't :(
+    //let test = ["Cat", "banana", "Buddy", "Chuck Bass", "bunny"]// the test works but when I do it with petNameList it doesn't :(
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return test.count//petNameList.count
+        return petNameList.count
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -56,7 +49,7 @@ class NewPostViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        return test[row]//petNameList[row]
+        return petNameList[row]
     }
     
     
@@ -66,11 +59,18 @@ class NewPostViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     }
     
     @IBAction func onPostButton(_ sender: Any) {
-       
+        var selectedValue = petNameList[pickerView.selectedRow(inComponent: 0)]
         let post = PFObject(className: "Posts")
         post["content"] = postTextField.text
         post["author"] = PFUser.current()!
-        //PFUser.current()?.setObject(post["username"], forKey: "username")
+        post["petName"] = selectedValue
+        var pic = PFFileObject(data: nil)
+        for x in pets{
+            if x["name"] as! String == selectedValue{
+                pic = x["image"] as! PFFileObject
+            }
+        }
+        post["image"] = pic
             
         post.saveInBackground { (success, error) in
             if success{
